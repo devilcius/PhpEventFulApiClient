@@ -1,5 +1,5 @@
 {
-    "name": "devilcius/PhpEventFulApiClient",
+    "name": "devilcius/eventful-api",
     "description": "PHP API client for EventFul webservices",
     "keywords": [
         "eventful",
