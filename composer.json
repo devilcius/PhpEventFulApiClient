@@ -1,0 +1,33 @@
+{
+    "name": "devilcius/PhpEventFulApiClient",
+    "description": "PHP API client for EventFul webservices",
+    "keywords": [
+        "eventful",
+        "api",
+        "webservice client"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/devilcius/PhpEventFulApiClient",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Marcos Peña",
+            "email": "devilcius@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "EventFul\\": "src",
+            "EventFul\\Test\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "php": ">=5.3.3",
+        "phpunit/phpunit": "~4.8",
+        "vlucas/phpdotenv": "*"
+    }
+}
