@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/devilcius/PhpEventFulApiClient.svg?style=svg)](https://circleci.com/gh/devilcius/PhpEventFulApiClient)
 Php EventFul Api Client
 ===============
 A PHP client library for the [EventFul API](https://api.eventful.com/docs)
@@ -32,6 +33,12 @@ foreach ($result['events'] as $event) {
     echo $event['title'];
 }
 
+```
+
+Tests
+-----------
+```bash
+phpunit
 ```
 
 Methods
