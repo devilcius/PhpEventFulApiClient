@@ -110,7 +110,7 @@ class Method
      */
     public function setHttpMethod($httpMethod)
     {
-        $this->name = $httpMethod;
+        $this->httpMethod = $httpMethod;
 
         return $this;
     }
