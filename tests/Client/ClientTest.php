@@ -14,9 +14,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($client->getApiKey());
         $this->assertEquals('theApiKey', $client->getApiKey());
         $this->assertInstanceOf('EventFul\Transport\TransportInterface', $client->getTransport());
-        $transport = $this->getMock('EventFul\Transport\CurlTransport');
-        $client = new EventFulApiClient('theApiKey', $transport);
-        $this->assertEquals($transport, $client->getTransport());
+        $client = new EventFulApiClient('theApiKey', 'endPoint', 100, 'userAgent');
+        $transport = $client->getTransport();
+        $this->assertEquals($transport->getEndpoint(), 'endPoint');
+        $this->assertEquals($transport->getTimeout(), 100);
+        $this->assertEquals($transport->getUserAgent(), 'userAgent');
     }
 
     public function testSetTransport()

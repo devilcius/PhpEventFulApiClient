@@ -21,7 +21,12 @@ Let's try to find an event using the `search` method of the `Event` service:
 ```php
 <?php
 
-$apiClient = new EventFulApiClient('secretAppKey);
+// options:
+$apiKey = 'secretAppKey'; // mandatory
+$endPoint = 'http://api.evdb.com'; // optional
+$timeout = 10; // optional
+$userAgent = 'EventFul PHP Client'; // optional
+$apiClient = new EventFulApiClient($apiKey, $endPoint, $timeout, $userAgent);
 
 $service = $apiClient->getEventService();
 $params['page_number'] = 1;

@@ -2,7 +2,6 @@
 
 namespace EventFul;
 
-use EventFul\Common\Util;
 use EventFul\Exception\InvalidResponseException;
 use EventFul\Exception\ResponseException;
 use EventFul\Transport\CurlTransport;
@@ -23,15 +22,14 @@ class EventFulApiClient
      * Constructor
      *
      * @param  string    $apiKey    Your API key
-     * @param  Transport $transport A Transport instance
+     * @param  string $endPoint api endpoint
+     * @param  int $timeout curl request time out in milleseconds
+     * @param  string $userAgent user agent used for requests
      */
-    public function __construct($apiKey, $transport = null)
+    public function __construct($apiKey, $endPoint = null, $timeout = null, $userAgent = null)
     {
         $this->apiKey = $apiKey;
-        $this->transport = $transport;
-        if (null === $transport) {
-            $transport = new CurlTransport();
-        }
+        $transport = new CurlTransport($endPoint, $timeout, $userAgent);
         $this->setTransport($transport);
     }
 
