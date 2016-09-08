@@ -24,9 +24,9 @@ class EventApiTest extends BaseApiTest
         $params['category'] = 'music';
         $params['location'] = 'Madrid';
         
-        $concerts = $service->search($params);
-        
-        $this->assertTrue(is_array($concerts));
+        $result = $service->search($params);
+
+        $this->assertTrue($result->total_items > 0);
     }
 
 }

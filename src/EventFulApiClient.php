@@ -2,6 +2,7 @@
 
 namespace EventFul;
 
+use EventFul\Common\Util;
 use EventFul\Exception\InvalidResponseException;
 use EventFul\Exception\ResponseException;
 use EventFul\Transport\CurlTransport;
@@ -118,24 +119,21 @@ class EventFulApiClient
         if ($raw) {
             return $rawResult;
         }
-        $result = json_decode($rawResult, true);
+        $result = json_decode($rawResult);
 
         if ($result === null) { // no results found
             $result = array();
         }
-        if (!is_array($result)) {
+        if (!is_object($result)) {
             throw new InvalidResponseException($rawResult);
         }
-        if (isset($result['error'])) {
-            $message = sprintf('Api error (%d): %s', $result['error'], $result['description']);
+        if (isset($result->error)) {
+            $message = sprintf('Api error (%d): %s', $result->error, $result->description);
 
             throw new ResponseException($message);
         }
-        if (1 === count($result)) {
-            $result = reset($result);
-        }
 
-        return 1 === count($result) ? reset($result) : $result;
+        return $result;
     }
 
     /**

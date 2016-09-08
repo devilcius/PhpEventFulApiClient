@@ -23,7 +23,7 @@ class UserApiTest extends BaseApiTest
         $params['keywords'] = self::USERNAME;        
         $response = $service->search($params);
         
-        $this->assertTrue($response['users']['user']['username'] === self::USERNAME);
+        $this->assertTrue($response->users->user->username === self::USERNAME);
     }
 
 }

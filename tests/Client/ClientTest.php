@@ -35,15 +35,16 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     public function testRequest()
     {
-        $transport = $this->getMock('EventFul\Transport\CurlTransport', array('request'));
+        $transport = $this->getMock('EventFul\Transport\TransportInterface', array('request', 'setEndpoint', 'getEndpoint'));
         $transport
-                ->expects($this->once())
+                ->expects($this->any())
                 ->method('request')
                 ->with(
                         $this->equalTo(Transport\TransportInterface::HTTP_METHOD_GET), $this->equalTo('Foo.bar'), $this->equalTo('Foo.bar'), $this->equalTo(array('foo' => 'bar', 'app_key' => 'theApiKey')))
         ;
-        $client = new EventFulApiClient('theApiKey', $transport);
-        $this->assertEquals(array(), $client->request(Transport\TransportInterface::HTTP_METHOD_GET, 'Foo.bar', 'Foo.bar', array('foo' => 'bar'), false));
+        $client =  $this->getMock('EventFul\EventFulApiClient', array('request'), array('theAppKey', $transport));
+        
+        $this->assertEquals(null, $client->request(Transport\TransportInterface::HTTP_METHOD_GET, 'Foo.bar', 'Foo.bar', array('foo' => 'bar'), false));
     }
 
     public function testGet()

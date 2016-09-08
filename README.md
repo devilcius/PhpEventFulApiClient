@@ -29,8 +29,8 @@ $params['page_size'] = 10;
 $params['category'] = 'music';
 $params['location'] = 'Madrid';
 $result = $service->search($params);
-foreach ($result['events'] as $event) {
-    echo $event['title'];
+foreach ($result->events->event as $event) {
+    echo $event->title;
 }
 
 ```

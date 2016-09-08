@@ -22,12 +22,10 @@ class PerformerApiTest extends BaseApiTest
         $params['page_number'] = 1;
         $params['page_size'] = 1;
         $params['category'] = 'music';
-        $params['sort_order'] = 'relevant';
-        $params['sort_direction'] = 'descending';
         $params['keywords'] = 'descendents';
 
         $performers = $service->search($params);
-        $this->assertTrue(is_array($performers));
+        $this->assertTrue(is_object($performers));
     }
 
     public function testGetPerformer()
@@ -43,6 +41,6 @@ class PerformerApiTest extends BaseApiTest
         $params['show_events'] = true;
         $performer = $service->get($params);
         
-        $this->assertTrue(is_array($performer));
+        $this->assertTrue(is_object($performer));
     }
 }
