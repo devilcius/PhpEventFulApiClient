@@ -12,9 +12,18 @@ class EventService extends BaseService
     protected function configure()
     {
         // https://api.eventful.com/docs/events/search
-        $method = new Method('search');
-        $method->setRequiredParam(array('keywords', 'location', 'category', 'date'));
-        $this->addMethod($method);
+        $searchMethod = new Method('search');
+        $searchMethod->setRequiredParam(array('keywords', 'location', 'category', 'date'));
+        $this->addMethod($searchMethod);
+        // https://api.eventful.com/docs/events/get
+        $getMethod = new Method('get');
+        $getMethod->setRequiredParam(array('id'));
+        $this->addMethod($getMethod);
+        // https://api.eventful.com/docs/events/going/list
+        $goingListMethod = new Method('goingList');
+        $goingListMethod->setRequiredParam(array('id'));
+        $this->addMethod($goingListMethod);
+        
         $this->setServiceResource('events');
     }
 }

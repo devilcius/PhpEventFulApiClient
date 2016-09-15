@@ -46,6 +46,9 @@ abstract class BaseService
      */
     public function __call($methodName, $methodParams)
     {
+        // transform camelCase method name to camel/case
+        $resourcePath = ltrim(strtolower(preg_replace('/[A-Z]/', '/$0', $methodName)), '/');
+
         if(!$this->hasMethod($methodName)) {
             
             throw new MethodNotFoundException(sprintf('Call to undefined method %s::%s.', get_class($this), $methodName));
@@ -57,7 +60,7 @@ abstract class BaseService
         $method = $this->getMethod($methodName);
         $method->setParams($methodParams[0]);
 
-        return $this->client->request($method->getHttpMethod(), $this->getServiceResource(), $methodName, $method->getParams());
+        return $this->client->request($method->getHttpMethod(), $this->getServiceResource(), $resourcePath, $method->getParams());
     }
 
     /**
@@ -124,7 +127,7 @@ abstract class BaseService
      *
      * @return Collection
      */
-    protected function getMethods()
+    public function getMethods()
     {
         return $this->methods;
     }

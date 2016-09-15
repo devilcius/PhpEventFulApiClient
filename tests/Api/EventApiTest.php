@@ -1,4 +1,5 @@
 <?php
+use EventFul\Exception\ResponseException;
 
 namespace EventFul\Test\Api;
 
@@ -27,6 +28,34 @@ class EventApiTest extends BaseApiTest
         $result = $service->search($params);
 
         $this->assertTrue($result->total_items > 0);
+    }
+
+    public function testGetEvent()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getEventService();
+        $eventId = 'E0-001-085924924-0';
+        $params['id'] = $eventId;        
+        $result = $service->get($params);
+        $this->assertTrue($result->id === $eventId);
+    }
+    
+    public function testGoingListEvents()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getEventService();
+        $eventId = 'E0-001-085924924-0';
+        $params['id'] = $eventId;        
+        $result = $service->goingList($params);
+        $this->assertTrue($result->id === $eventId);
     }
 
 }

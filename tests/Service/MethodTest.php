@@ -25,7 +25,7 @@ class MethodTest extends \PHPUnit_Framework_TestCase
                 ->expects($this->once())
                 ->method('request')
                 ->with(
-                        $this->equalTo(TransportInterface::HTTP_METHOD_GET), $this->equalTo('TheService'), $this->equalTo('theMethod'), $this->equalTo(array('foo' => 'buh'))
+                        $this->equalTo(TransportInterface::HTTP_METHOD_GET), $this->equalTo('TheService'), $this->equalTo('the/method'), $this->equalTo(array('foo' => 'buh'))
                 )
                 ->will($this->returnValue('TheClientReturnValue'))
         ;

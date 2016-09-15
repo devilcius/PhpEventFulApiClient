@@ -55,7 +55,7 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
             ->with(
                     $this->equalTo(TransportInterface::HTTP_METHOD_GET), 
                     $this->equalTo('TheService'), 
-                    $this->equalTo('theMethod'), 
+                    $this->equalTo('the/method'), 
                     $this->equalTo(array('foo' => 'bar'))
                     )
             ->will($this->returnValue('TheClientReturnValue'))
