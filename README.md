@@ -58,7 +58,7 @@ Methods
 | **Event** | restore | Restore a withdrawn event.  | :hourglass: |
 | **Event** | search | Search for events. | :heavy_check_mark: |
 | **Event** | reindex | Update the search index for an event record. | :hourglass: |
-| **Event** | tagsList | List all tags attached to an event. | :hourglass: |
+| **Event** | tagsList | List all tags attached to an event. | :heavy_check_mark: |
 | **Event** | goingList | List all users going to an event. | :heavy_check_mark: |
 | **Event** | tagsNew | Add tags to an event. | :hourglass: |
 | **Event** | tagsRemove | Remove tags from an event. | :hourglass: |

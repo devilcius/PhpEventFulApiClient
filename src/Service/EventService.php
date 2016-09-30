@@ -23,6 +23,10 @@ class EventService extends BaseService
         $goingListMethod = new Method('goingList');
         $goingListMethod->setRequiredParam(array('id'));
         $this->addMethod($goingListMethod);
+        // http://api.evdb.com/docs/events/tags/list
+        $tagsListMethod = new Method('tagsList');
+        $tagsListMethod->setRequiredParam(array('id'));
+        $this->addMethod($tagsListMethod);
         
         $this->setServiceResource('events');
     }
