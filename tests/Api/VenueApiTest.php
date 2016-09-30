@@ -73,7 +73,6 @@ class VenueApiTest extends BaseApiTest
         $this->assertTrue($result->original === $city);
     }    
     
-    
     public function testPropertiesListVenue()
     {
         if (!$this->apiKey) {

@@ -27,6 +27,10 @@ class EventService extends BaseService
         $tagsListMethod = new Method('tagsList');
         $tagsListMethod->setRequiredParam(array('id'));
         $this->addMethod($tagsListMethod);
+        // http://api.evdb.com/docs/events/properties/list
+        $propertiesListMethod = new Method('propertiesList');
+        $propertiesListMethod->setRequiredParam(array('id'));
+        $this->addMethod($propertiesListMethod);          
         // http://api.evdb.com/docs/events/dates/resolve
         $datesResolveMethod = new Method('datesResolve');
         $datesResolveMethod->setRequiredParam(array('date'));

@@ -72,7 +72,7 @@ Methods
 | **Event** | performersAdd | Add a performer to an event. | :hourglass: |
 | **Event** | performersRemove | Remove a performer from an event. | :hourglass: |
 | **Event** | propertiesAdd | Add a property to an event. | :hourglass: |
-| **Event** | propertiesList | List properties for an event. | :hourglass: |
+| **Event** | propertiesList | List properties for an event. | :heavy_check_mark: |
 | **Event** | propertiesRemove | Remove a property from an event. | :hourglass: |
 | **Event** | categoriesAdd | Add a category to an event. | :hourglass: |
 | **Event** | categoriesRemove | Remove a category from an event. |  :hourglass:|
