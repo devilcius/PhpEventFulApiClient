@@ -46,7 +46,7 @@ class MethodTest extends \PHPUnit_Framework_TestCase
         $setServiceResourceMethod->setAccessible(true);
         $setServiceResourceMethod->invokeArgs($service, array('TheService'));
         $this->assertEquals('TheClientReturnValue', $service->theMethod(array('foo' => 'buh')));
-        $this->expectException(MissingParameterException::class);
+        $this->setExpectedException(MissingParameterException::class);
         $this->assertEquals('TheClientReturnValue', $service->theMethod(array('boo' => 'buh')));
     }
 
