@@ -82,7 +82,7 @@ Methods
 | **Venue** | modify | Make changes to a venue. | :hourglass: |
 | **Venue** | withdraw | Withdraw (delete, remove) a venue. | :hourglass: |
 | **Venue** | restore | Restore a withdrawn venue. | :hourglass: |
-| **Venue** | search | Search for venues. | :hourglass: |
+| **Venue** | search | Search for venues. | :heavy_check_mark: |
 | **Venue** | tagsList | List all tags attached to an venue. | :hourglass: |
 | **Venue** | tagsNew | Add tags to an venue. | :hourglass: |
 | **Venue** | tagsDelete | Remove tags from an venue. | :hourglass: |

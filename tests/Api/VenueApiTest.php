@@ -24,4 +24,21 @@ class VenueApiTest extends BaseApiTest
         $venue = $service->get($params);
         $this->assertTrue($venue->id === $mobyDickVenueId);
     }
+    
+    public function testSearchVenue()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getVenueService();
+        $params['location'] = 'Madrid';        
+        $params['keywords'] = 'Moby Dick';
+        $venues = $service->search($params);
+
+        
+        $this->assertTrue(intval($venues->total_items) > 0);
+    }
+    
 }

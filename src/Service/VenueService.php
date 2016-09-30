@@ -15,6 +15,10 @@ class VenueService extends BaseService
         $getMethod = new Method('get');
         $getMethod->setRequiredParam(array('id'));        
         $this->addMethod($getMethod);
+        // http://api.evdb.com/docs/venues/search
+        $searchMethod = new Method('search');
+        $searchMethod->setRequiredParam(array('keywords', 'location'));        
+        $this->addMethod($searchMethod);        
         
         $this->setServiceResource('venues');
     }
