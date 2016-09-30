@@ -71,5 +71,18 @@ class EventApiTest extends BaseApiTest
         $result = $service->tagsList($params);
         $this->assertTrue($result->id === $eventId);
     }
+    
+    public function testDatesResolveEvents()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getEventService();
+        $params['date'] = '2016-09-30';        
+        $result = $service->datesResolve($params);
+        $this->assertTrue($result->status === 'ok');
+    }
 
 }
