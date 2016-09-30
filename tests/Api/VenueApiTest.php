@@ -73,4 +73,20 @@ class VenueApiTest extends BaseApiTest
         $this->assertTrue($result->original === $city);
     }    
     
+    
+    public function testPropertiesListVenue()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getVenueService();
+        $venueId = 'V0-001-000311874-3';
+        $params['id'] = $venueId;        
+        $result = $service->propertiesList($params);
+
+        $this->assertTrue($result->id === $venueId);
+    }      
+    
 }

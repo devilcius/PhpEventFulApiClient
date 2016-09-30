@@ -27,6 +27,10 @@ class VenueService extends BaseService
         $datesResolveMethod = new Method('resolve');
         $datesResolveMethod->setRequiredParam(array('location', 'city'));
         $this->addMethod($datesResolveMethod);        
+        // http://api.evdb.com/docs/venues/properties/list
+        $propertiesListMethod = new Method('propertiesList');
+        $propertiesListMethod->setRequiredParam(array('id'));
+        $this->addMethod($propertiesListMethod);        
         
         $this->setServiceResource('venues');
     }

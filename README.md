@@ -92,7 +92,7 @@ Methods
 | **Venue** | linksNew | Add a URL to a venue. | :hourglass: |
 | **Venue** | linksDelete | Remove a URL from an event. | :hourglass: |
 | **Venue** | propertiesAdd | Add a property to an venue. | :hourglass: |
-| **Venue** | propertiesList | List properties for an venue. | :hourglass: |
+| **Venue** | propertiesList | List properties for an venue. | :heavy_check_mark: |
 | **Venue** | propertiesRemove | Remove a property from an venue. | :hourglass: |
 | **Venue** | resolve | Resolve a venue from a location string. | :heavy_check_mark: |
 | **User** | calendarsList | List a user's calendars. | :hourglass: |
