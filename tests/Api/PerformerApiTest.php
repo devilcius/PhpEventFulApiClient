@@ -43,4 +43,19 @@ class PerformerApiTest extends BaseApiTest
         
         $this->assertTrue(is_object($performer));
     }
+
+    public function testEventsListPerformer()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $decendentsId = 'P0-001-000045907-4';
+        $service = $this->apiClient->getPerformerService();
+        $params['id'] = $decendentsId;
+        $performer = $service->eventsList($params);
+
+        $this->assertTrue(is_object($performer));
+    }
 }

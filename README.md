@@ -115,7 +115,7 @@ Methods
 | **Performer** | linksRemove | Remove links from an performer. | :hourglass: |
 | **Performer** | imagesAdd | Add an image to a performer. | :hourglass: |
 | **Performer** | imagesRemove | Remove an image from a performer. | :hourglass: |
-| **Performer** | eventsList | Get all events for a performer. | :hourglass: |
+| **Performer** | eventsList | Get all events for a performer. | :heavy_check_mark: |
 | **Performer** | xidsList | Get all performers based on external ids (facebook, etc). | :hourglass: |
 | **Demand** | get | Get the details for a demand. | :hourglass: |
 | **Demand** | search | Search for demands. | :hourglass: |

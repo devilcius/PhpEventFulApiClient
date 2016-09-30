@@ -19,6 +19,10 @@ class PerformerService extends BaseService
         $getMethod = new Method('get');
         $getMethod->setRequiredParam(array('id'));        
         $this->addMethod($getMethod);
+        // http://api.evdb.com/docs/performers/events/list
+        $eventsListMethod = new Method('eventsList');
+        $eventsListMethod->setRequiredParam(array('id'));        
+        $this->addMethod($eventsListMethod);
         
         $this->setServiceResource('performers');
     }
