@@ -78,7 +78,7 @@ Methods
 | **Event** | categoriesRemove | Remove a category from an event. |  :hourglass:|
 | **Event** | datesResolve | Resolve start and end dates from a date string. | :heavy_check_mark: |
 | **Venue** | new | Add a new venue record. | :hourglass: |
-| **Venue** | get | Get a venue record. | :hourglass: |
+| **Venue** | get | Get a venue record. | :heavy_check_mark: |
 | **Venue** | modify | Make changes to a venue. | :hourglass: |
 | **Venue** | withdraw | Withdraw (delete, remove) a venue. | :hourglass: |
 | **Venue** | restore | Restore a withdrawn venue. | :hourglass: |

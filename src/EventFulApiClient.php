@@ -165,6 +165,16 @@ class EventFulApiClient
     }
 
     /**
+     * Returns an event venue instance
+     *
+     * @return \Lastfm\Service\VenueService
+     */
+    public function getVenueService()
+    {
+        return $this->getService('venue');
+    }
+
+    /**
      * Returns an instance of the specified service
      *
      * @param  string $name
