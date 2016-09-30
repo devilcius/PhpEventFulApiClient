@@ -97,7 +97,7 @@ Methods
 | **Venue** | resolve | Resolve a venue from a location string. | :heavy_check_mark: |
 | **User** | get | Get a user record. | :heavy_check_mark: |
 | **User** | search | Searches for users. | :heavy_check_mark: |
-| **User** | groupsList | List the groups of which a user is a member. | :hourglass: |
+| **User** | groupsList | List the groups of which a user is a member. | :heavy_check_mark: |
 | **User** | venueList | List a user's recently added venues. | :hourglass: |
 | **User** | localesAdd | Add a locale to a user's saved locations. | :hourglass: |
 | **User** | localesList | List a user's saved locations. | :hourglass: |

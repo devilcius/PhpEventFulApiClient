@@ -16,9 +16,13 @@ class UserService extends BaseService
         $searchMethod->setRequiredParam(array('keywords', 'location'));        
         $this->addMethod($searchMethod);
         // https://api.eventful.com/docs/users/get
-        $method = new Method('get');
-        //$method->setRequiredParam(array('keywords', 'location'));        
-        $this->addMethod($method);
+        $getMethod = new Method('get');
+        $getMethod->setRequiredParam(array('id'));        
+        $this->addMethod($getMethod);
+        // http://api.evdb.com/docs/users/groups/list
+        $groupListMethod = new Method('groupsList');
+        $groupListMethod->setRequiredParam(array('id'));        
+        $this->addMethod($groupListMethod);
         
         $this->setServiceResource('users');
     }

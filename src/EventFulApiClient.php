@@ -106,26 +106,27 @@ class EventFulApiClient
      */
     public function request($httpMethod, $service, $apiMethod, array $parameters = array(), $raw = false)
     {
-        if (null !== $this->apiKey) {
+        if(null !== $this->apiKey) {
             $parameters['app_key'] = $this->apiKey;
         }
-        if (!$raw) {
+        if(!$raw) {
             $options['format'] = 'json';
         }
 
         $rawResult = $this->transport->request($httpMethod, $service, $apiMethod, $parameters, $options);
-        if ($raw) {
+        if($raw) {
             return $rawResult;
         }
         $result = json_decode($rawResult);
 
-        if ($result === null) { // no results found
+        if($result === null) { // no results found
             $result = array();
         }
-        if (!is_object($result)) {
+
+        if(!$this->isValidResponse($result)) {
             throw new InvalidResponseException($rawResult);
         }
-        if (isset($result->error)) {
+        if(isset($result->error)) {
             $message = sprintf('Api error (%d): %s', $result->error, $result->description);
 
             throw new ResponseException($message);
@@ -183,7 +184,7 @@ class EventFulApiClient
      */
     protected function getService($name)
     {
-        if (!isset($this->services[$name])) {
+        if(!isset($this->services[$name])) {
             $this->services[$name] = $this->createService($name);
         }
         return $this->services[$name];
@@ -199,14 +200,20 @@ class EventFulApiClient
     protected function createService($name)
     {
         $className = sprintf('EventFul\Service\%sService', ucfirst($name));
-        if (!class_exists($className)) {
+        if(!class_exists($className)) {
             throw new \RuntimeException(sprintf(
-                    'Cannot create service \'%s\', class %s not found.', $name, $className
+                'Cannot create service \'%s\', class %s not found.', $name, $className
             ));
         }
         $class = new \ReflectionClass($className);
 
         return $class->newInstanceArgs(array($this));
+    }
+
+    private function isValidResponse($string)
+    {
+        
+        return is_array($string) || (json_last_error() == JSON_ERROR_NONE);
     }
 
 }

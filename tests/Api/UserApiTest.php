@@ -40,4 +40,18 @@ class UserApiTest extends BaseApiTest
         $this->assertTrue($response->username === self::USERNAME);
     }
 
+    public function testGroupListUser()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getUserService();
+        $params['id'] = self::USERNAME;        
+        $response = $service->groupsList($params);
+
+        $this->assertTrue(is_array($response));
+    }
+
 }
