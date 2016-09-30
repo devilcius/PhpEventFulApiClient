@@ -12,7 +12,7 @@ class EventApiTest extends BaseApiTest
 {
 
 
-    public function testSearchEvents()
+    public function testSearchEvent()
     {
         if (!$this->apiKey) {
             $this->markTestSkipped(
@@ -44,7 +44,7 @@ class EventApiTest extends BaseApiTest
         $this->assertTrue($result->id === $eventId);
     }
     
-    public function testGoingListEvents()
+    public function testGoingListEvent()
     {
         if (!$this->apiKey) {
             $this->markTestSkipped(
@@ -58,7 +58,7 @@ class EventApiTest extends BaseApiTest
         $this->assertTrue($result->id === $eventId);
     }
     
-    public function testTagsListEvents()
+    public function testTagsListEvent()
     {
         if (!$this->apiKey) {
             $this->markTestSkipped(
@@ -72,7 +72,7 @@ class EventApiTest extends BaseApiTest
         $this->assertTrue($result->id === $eventId);
     }
     
-    public function testDatesResolveEvents()
+    public function testDatesResolveEvent()
     {
         if (!$this->apiKey) {
             $this->markTestSkipped(

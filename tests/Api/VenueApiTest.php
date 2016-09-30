@@ -39,8 +39,7 @@ class VenueApiTest extends BaseApiTest
 
         
         $this->assertTrue(intval($venues->total_items) > 0);
-    }
-    
+    }    
     
     public function testTagsListVenue()
     {
@@ -55,6 +54,23 @@ class VenueApiTest extends BaseApiTest
         $result = $service->tagsList($params);
 
         $this->assertTrue($result->id === $venueId);
+    }    
+    
+    
+    public function testResolveVenue()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getVenueService();
+        $city = 'Madrid';
+        $params['location'] = $city;
+        $params['city'] = $city;
+        $result = $service->resolve($params);
+        
+        $this->assertTrue($result->original === $city);
     }    
     
 }

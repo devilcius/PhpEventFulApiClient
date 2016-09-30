@@ -94,7 +94,7 @@ Methods
 | **Venue** | propertiesAdd | Add a property to an venue. | :hourglass: |
 | **Venue** | propertiesList | List properties for an venue. | :hourglass: |
 | **Venue** | propertiesRemove | Remove a property from an venue. | :hourglass: |
-| **Venue** | resolve | Resolve a venue from a location string. | :hourglass: |
+| **Venue** | resolve | Resolve a venue from a location string. | :heavy_check_mark: |
 | **User** | calendarsList | List a user's calendars. | :hourglass: |
 | **User** | calendarsGet | Get the settings for a user's calendar. | :hourglass: |
 | **User** | get | Get a user record. | :hourglass: |

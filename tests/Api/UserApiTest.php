@@ -12,7 +12,7 @@ class UserApiTest extends BaseApiTest
 
     const USERNAME = 'devilcius';
 
-    public function testSearchUsers()
+    public function testSearchUser()
     {
         if (!$this->apiKey) {
             $this->markTestSkipped(

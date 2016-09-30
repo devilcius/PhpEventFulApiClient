@@ -11,7 +11,7 @@ class PerformerApiTest extends BaseApiTest
 {
 
 
-    public function testSearchPerformers()
+    public function testSearchPerformer()
     {
         if (!$this->apiKey) {
             $this->markTestSkipped(

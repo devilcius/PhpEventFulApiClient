@@ -22,7 +22,11 @@ class VenueService extends BaseService
         // http://api.evdb.com/docs/venues/tags/list
         $tagsListMethod = new Method('tagsList');
         $tagsListMethod->setRequiredParam(array('id'));
-        $this->addMethod($tagsListMethod);        
+        $this->addMethod($tagsListMethod);      
+        // http://api.evdb.com/docs/venues/resolve
+        $datesResolveMethod = new Method('resolve');
+        $datesResolveMethod->setRequiredParam(array('location', 'city'));
+        $this->addMethod($datesResolveMethod);        
         
         $this->setServiceResource('venues');
     }
