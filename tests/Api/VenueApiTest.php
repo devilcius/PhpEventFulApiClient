@@ -41,4 +41,20 @@ class VenueApiTest extends BaseApiTest
         $this->assertTrue(intval($venues->total_items) > 0);
     }
     
+    
+    public function testTagsListVenue()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getVenueService();
+        $venueId = 'V0-001-000311874-3';
+        $params['id'] = $venueId;        
+        $result = $service->tagsList($params);
+
+        $this->assertTrue($result->id === $venueId);
+    }    
+    
 }
