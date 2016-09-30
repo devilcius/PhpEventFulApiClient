@@ -95,9 +95,7 @@ Methods
 | **Venue** | propertiesList | List properties for an venue. | :heavy_check_mark: |
 | **Venue** | propertiesRemove | Remove a property from an venue. | :hourglass: |
 | **Venue** | resolve | Resolve a venue from a location string. | :heavy_check_mark: |
-| **User** | calendarsList | List a user's calendars. | :hourglass: |
-| **User** | calendarsGet | Get the settings for a user's calendar. | :hourglass: |
-| **User** | get | Get a user record. | :hourglass: |
+| **User** | get | Get a user record. | :heavy_check_mark: |
 | **User** | search | Searches for users. | :heavy_check_mark: |
 | **User** | groupsList | List the groups of which a user is a member. | :hourglass: |
 | **User** | venueList | List a user's recently added venues. | :hourglass: |
