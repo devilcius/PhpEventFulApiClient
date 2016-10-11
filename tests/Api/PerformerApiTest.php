@@ -35,13 +35,13 @@ class PerformerApiTest extends BaseApiTest
               'Api key needed for this kind of test'
             );
         }                
-        $decendentsId = 'P0-001-000045907-4';
+        $descendentsId = 'P0-001-000045907-4';
         $service = $this->apiClient->getPerformerService();
-        $params['id'] = $decendentsId;
-        $params['show_events'] = true;
+        $params['id'] = $descendentsId;
+        $params['show_events'] = false;
         $performer = $service->get($params);
-        
-        $this->assertTrue(is_object($performer));
+
+        $this->assertTrue($performer->id === $descendentsId);
     }
 
     public function testEventsListPerformer()
@@ -57,5 +57,21 @@ class PerformerApiTest extends BaseApiTest
         $performer = $service->eventsList($params);
 
         $this->assertTrue(is_object($performer));
+    }
+
+    public function testGetPerformerFromExternalId()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $facebookId = '201362846550542';
+        $service = $this->apiClient->getPerformerService();
+        $params['ids'] = $facebookId;
+        $params['source'] = 'fb_uid';
+        $performers = $service->xidsList($params);
+        
+        $this->assertTrue($facebookId === $performers->performer->xid);
     }
 }

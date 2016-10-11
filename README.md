@@ -116,7 +116,7 @@ Methods
 | **Performer** | imagesAdd | Add an image to a performer. | :hourglass: |
 | **Performer** | imagesRemove | Remove an image from a performer. | :hourglass: |
 | **Performer** | eventsList | Get all events for a performer. | :heavy_check_mark: |
-| **Performer** | xidsList | Get all performers based on external ids (facebook, etc). | :hourglass: |
+| **Performer** | xidsList | Get all performers based on external ids (facebook, etc). | :heavy_check_mark: |
 | **Demand** | get | Get the details for a demand. | :hourglass: |
 | **Demand** | search | Search for demands. | :hourglass: |
 | **Category** | list | List the available categories. | :hourglass: |

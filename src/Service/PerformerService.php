@@ -23,6 +23,10 @@ class PerformerService extends BaseService
         $eventsListMethod = new Method('eventsList');
         $eventsListMethod->setRequiredParam(array('id'));        
         $this->addMethod($eventsListMethod);
+        // https://api.eventful.com/docs/performers/xids/list
+        $getFromXidMethod = new Method('xidsList');
+        $getFromXidMethod->setRequiredParam(array('ids'));        
+        $this->addMethod($getFromXidMethod);
         
         $this->setServiceResource('performers');
     }
