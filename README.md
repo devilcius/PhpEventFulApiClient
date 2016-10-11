@@ -119,5 +119,5 @@ Methods
 | **Performer** | xidsList | Get all performers based on external ids (facebook, etc). | :heavy_check_mark: |
 | **Demand** | get | Get the details for a demand. | :heavy_check_mark: |
 | **Demand** | search | Search for demands. | :heavy_check_mark: |
-| **Category** | list | List the available categories. | :hourglass: |
+| **Category** | list | List the available categories. | :heavy_check_mark: |
 

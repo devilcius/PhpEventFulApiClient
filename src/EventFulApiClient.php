@@ -186,6 +186,16 @@ class EventFulApiClient
     }
 
     /**
+     * Returns a category service instance
+     *
+     * @return \EventFul\Service\CategoryService
+     */
+    public function getCategoryService()
+    {
+        return $this->getService('category');
+    }
+
+    /**
      * Returns an instance of the specified service
      *
      * @param  string $name
