@@ -25,4 +25,19 @@ class DemandApiTest extends BaseApiTest
         $this->assertTrue($demand->id === $descendentsDemandId);
     }
 
+    public function testSearchDemand()
+    {
+        if (!$this->apiKey) {
+            $this->markTestSkipped(
+              'Api key needed for this kind of test'
+            );
+        }                
+        $service = $this->apiClient->getDemandService();
+        $params['location'] = 'Madrid';
+        $params['category'] = 'Music';
+        $demands = $service->search($params);
+        
+        $this->assertTrue($demands->total_items > 0);
+    }
+
 }
