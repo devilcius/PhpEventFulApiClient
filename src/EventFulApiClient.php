@@ -138,7 +138,7 @@ class EventFulApiClient
     /**
      * Returns an event service instance
      *
-     * @return \Lastfm\Service\EventService
+     * @return \EventFul\Service\EventService
      */
     public function getEventService()
     {
@@ -146,9 +146,9 @@ class EventFulApiClient
     }
 
     /**
-     * Returns an event service instance
+     * Returns an user service instance
      *
-     * @return \Lastfm\Service\UserService
+     * @return \EventFul\Service\UserService
      */
     public function getUserService()
     {
@@ -156,9 +156,9 @@ class EventFulApiClient
     }
 
     /**
-     * Returns an event service instance
+     * Returns an performer service instance
      *
-     * @return \Lastfm\Service\PerformerService
+     * @return \EventFul\Service\PerformerService
      */
     public function getPerformerService()
     {
@@ -166,9 +166,9 @@ class EventFulApiClient
     }
 
     /**
-     * Returns an event venue instance
+     * Returns an event venue service instance
      *
-     * @return \Lastfm\Service\VenueService
+     * @return \EventFul\Service\VenueService
      */
     public function getVenueService()
     {
@@ -176,11 +176,21 @@ class EventFulApiClient
     }
 
     /**
+     * Returns a demand service instance
+     *
+     * @return \EventFul\Service\DemandService
+     */
+    public function getDemandService()
+    {
+        return $this->getService('demand');
+    }
+
+    /**
      * Returns an instance of the specified service
      *
      * @param  string $name
      *
-     * @return \Lastfm\Service
+     * @return \EventFul\Service
      */
     protected function getService($name)
     {
@@ -195,7 +205,7 @@ class EventFulApiClient
      *
      * @param  string $name
      *
-     * @return \Lastfm\Service
+     * @return \EventFul\Service
      */
     protected function createService($name)
     {
